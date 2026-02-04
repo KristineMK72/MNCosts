@@ -1,0 +1,27 @@
+{
+  "debtPerCapita": [
+    {"year": 2011, "value": 43820},
+    {"year": 2023, "value": 65020}
+  ],
+  "delinquency90": [
+    {"year": 2011, "value": 3.13},
+    {"year": 2021, "value": 0.88},
+    {"year": 2023, "value": 1.24}
+  ],
+  "depressionPct": [
+    {"year": 2011, "value": 15.1},
+    {"year": 2020, "value": 19.8},
+    {"year": 2022, "value": 23.5},
+    {"year": 2023, "value": 23.0}
+  ],
+  "suicideRate": [
+    {"year": 2011, "value": 12.3},
+    {"year": 2012, "value": 12.5},
+    {"year": 2013, "value": 12.5},
+    {"year": 2014, "value": 12.9},
+    {"year": 2015, "value": 13.3},
+    {"year": 2016, "value": 13.5},
+    {"year": 2017, "value": 13.8},
+    {"year": 2022, "value": 14.8}
+  ]
+}
