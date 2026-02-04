@@ -40,6 +40,8 @@ export default function HomePage() {
         normalize={normalize}
         yLabel={normalize ? "0 → 1 index" : "Raw values (mixed units)"}
       />
+      <ReportSection />
+      <CurrentDevelopments />
     </main>
   );
 }
