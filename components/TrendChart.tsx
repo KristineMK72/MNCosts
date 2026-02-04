@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
+import type { Layout, Data } from "plotly.js";
 
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
@@ -21,8 +22,13 @@ function normalizeTo01(points: SeriesPoint[]) {
   return points.map((p) => ({ ...p, value: (p.value - min) / denom }));
 }
 
-export default function TrendChart({ title, series, normalize = false, yLabel }: Props) {
-  const traces = useMemo(() => {
+export default function TrendChart({
+  title,
+  series,
+  normalize = false,
+  yLabel,
+}: Props) {
+  const traces: Partial<Data>[] = useMemo(() => {
     return series.map((s) => {
       const pts = normalize ? normalizeTo01(s.points) : s.points;
       return {
@@ -38,6 +44,16 @@ export default function TrendChart({ title, series, normalize = false, yLabel }:
     });
   }, [series, normalize]);
 
+  const layout: Partial<Layout> = {
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    font: { color: "white" },
+    margin: { l: 52, r: 18, t: 20, b: 42 },
+    legend: { orientation: "h" },
+    xaxis: { title: "Year", gridcolor: "rgba(255,255,255,0.08)" },
+    yaxis: { title: yLabel, gridcolor: "rgba(255,255,255,0.08)" },
+  };
+
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
       <div className="mb-2 flex items-baseline justify-between gap-3">
@@ -45,16 +61,8 @@ export default function TrendChart({ title, series, normalize = false, yLabel }:
       </div>
 
       <Plot
-        data={traces as any}
-        layout={{
-          paper_bgcolor: "rgba(0,0,0,0)",
-          plot_bgcolor: "rgba(0,0,0,0)",
-          font: { color: "white" },
-          margin: { l: 52, r: 18, t: 20, b: 42 },
-          legend: { orientation: "h" },
-          xaxis: { title: "Year", gridcolor: "rgba(255,255,255,0.08)" },
-          yaxis: { title: yLabel, gridcolor: "rgba(255,255,255,0.08)" },
-        }}
+        data={traces}
+        layout={layout}
         config={{ responsive: true, displaylogo: false }}
         style={{ width: "100%", height: 420 }}
       />
