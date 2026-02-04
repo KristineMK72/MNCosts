@@ -39,6 +39,7 @@ export default function HomePage() {
         series={combined}
         normalize={normalize}
         yLabel={normalize ? "0 → 1 index" : "Raw values (mixed units)"}
+        events={(eventData as any).events}
       />
       <ReportSection />
       <CurrentDevelopments />
