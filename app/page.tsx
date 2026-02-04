@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import TrendChart from "@/components/TrendChart";
 import NormalizeToggle from "@/components/NormalizeToggle";
 import trends from "@/data/mn_trends.json";
+import eventData from "@/data/mn_events.json";
 import ReportSection from "@/components/ReportSection";
 import CurrentDevelopments from "@/components/CurrentDevelopments";
 
@@ -15,7 +16,7 @@ export default function HomePage() {
       { name: "Total Debt per Capita", points: (trends as any).debtPerCapita },
       { name: "Delinquency Rate (90+ days)", points: (trends as any).delinquency90 },
       { name: "Depression Rate", points: (trends as any).depressionPct },
-      { name: "Suicide Rate", points: (trends as any).suicideRate },
+      { name: "Suicide Rate", points: (trends as any).suicideRate }
     ];
   }, []);
 
@@ -41,6 +42,7 @@ export default function HomePage() {
         yLabel={normalize ? "0 → 1 index" : "Raw values (mixed units)"}
         events={(eventData as any).events}
       />
+
       <ReportSection />
       <CurrentDevelopments />
     </main>
