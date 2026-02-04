@@ -4,6 +4,8 @@ import { useMemo, useState } from "react";
 import TrendChart from "@/components/TrendChart";
 import NormalizeToggle from "@/components/NormalizeToggle";
 import trends from "@/data/mn_trends.json";
+import ReportSection from "@/components/ReportSection";
+import CurrentDevelopments from "@/components/CurrentDevelopments";
 
 export default function HomePage() {
   const [normalize, setNormalize] = useState(true);
