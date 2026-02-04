@@ -7,11 +7,14 @@ import type { Layout, Data } from "plotly.js";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 type SeriesPoint = { year: number; value: number };
+type ChartEvent = { label: string; x: number; source?: string };
+
 type Props = {
   title: string;
   series: { name: string; points: SeriesPoint[] }[];
   normalize?: boolean;
   yLabel?: string;
+  events?: ChartEvent[];
 };
 
 function normalizeTo01(points: SeriesPoint[]) {
@@ -27,6 +30,7 @@ export default function TrendChart({
   series,
   normalize = false,
   yLabel,
+  events = [],
 }: Props) {
   const traces: Partial<Data>[] = useMemo(() => {
     return series.map((s) => {
@@ -44,6 +48,38 @@ export default function TrendChart({
     });
   }, [series, normalize]);
 
+  // Vertical timeline markers (fraud / policy / investigations)
+  const eventShapes = events.map((e) => ({
+    type: "line" as const,
+    xref: "x" as const,
+    yref: "paper" as const,
+    x0: e.x,
+    x1: e.x,
+    y0: 0,
+    y1: 1,
+    line: { width: 1, dash: "dot", color: "rgba(255,255,255,0.25)" },
+  }));
+
+  const eventAnnotations = events.map((e, i) => ({
+    x: e.x,
+    y: 1,
+    xref: "x" as const,
+    yref: "paper" as const,
+    xanchor: "left" as const,
+    yanchor: "top" as const,
+    text: e.source
+      ? `<a href="${e.source}" target="_blank">${e.label}</a>`
+      : e.label,
+    showarrow: false,
+    font: { size: 11, color: "rgba(255,255,255,0.75)" },
+    bgcolor: "rgba(0,0,0,0.35)",
+    bordercolor: "rgba(255,255,255,0.12)",
+    borderwidth: 1,
+    borderpad: 3,
+    // stagger to reduce overlap
+    ay: -(8 + (i % 3) * 18),
+  }));
+
   const layout: Partial<Layout> = {
     paper_bgcolor: "rgba(0,0,0,0)",
     plot_bgcolor: "rgba(0,0,0,0)",
@@ -52,6 +88,8 @@ export default function TrendChart({
     legend: { orientation: "h" },
     xaxis: { title: "Year", gridcolor: "rgba(255,255,255,0.08)" },
     yaxis: { title: yLabel, gridcolor: "rgba(255,255,255,0.08)" },
+    shapes: eventShapes as any,
+    annotations: eventAnnotations as any,
   };
 
   return (
@@ -61,8 +99,8 @@ export default function TrendChart({
       </div>
 
       <Plot
-        data={traces}
-        layout={layout}
+        data={traces as any}
+        layout={layout as any}
         config={{ responsive: true, displaylogo: false }}
         style={{ width: "100%", height: 420 }}
       />
