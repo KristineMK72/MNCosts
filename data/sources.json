@@ -1,0 +1,55 @@
+{
+  "fraud": [
+    {
+      "label": "MPR News (Jan 6, 2026): Timeline of fraud investigations that shaped Walz’s tenure",
+      "href": "https://www.mprnews.org/story/2026/01/06/timeline-of-fraud-investigations-that-shaped-walz-tenure",
+      "note": "Overview timeline + context"
+    },
+    {
+      "label": "Congress.gov PDF (Jan 2026): Governor Walz executive order / anti-fraud steps (hearing document)",
+      "href": "https://www.congress.gov/119/meeting/house/118871/documents/HHRG-119-JU08-20260121-SD026.pdf",
+      "note": "Executive order summary and described actions"
+    },
+    {
+      "label": "U.S. Treasury press release (Jan 9, 2026): Initiatives to combat fraud; mentions Minnesota fraud rings",
+      "href": "https://home.treasury.gov/news/press-releases/sb0354",
+      "note": "Federal perspective on Minnesota-linked fraud activity"
+    }
+  ],
+  "autoInsurance": [
+    {
+      "label": "Star Tribune (Aug 11, 2025): After dramatic rises, MN auto premiums showed mixed movement in 2025",
+      "href": "https://www.startribune.com/after-nation-leading-rate-hikes-for-auto-insurance-in-24-minnesota-may-see-mild-increase-this-year/601451603",
+      "note": "Discusses rates and factors cited by analysts"
+    },
+    {
+      "label": "Insurify (Nov 13, 2025): Average car insurance cost in Minnesota",
+      "href": "https://insurify.com/car-insurance/minnesota/average-cost/",
+      "note": "State-level premium trend summary"
+    }
+  ],
+  "tabs": [
+    {
+      "label": "Axios Twin Cities (Dec 4, 2025): Vehicle renewal costs jump; registration tax structure explained",
+      "href": "https://www.axios.com/local/twin-cities/2025/12/04/minnesota-vehicle-registrations-taxes-increase-20-percent",
+      "note": "How the newer formula can raise renewal costs"
+    },
+    {
+      "label": "MN House: New Laws (Transportation law summary): Registration changes starting Jan 1, 2024",
+      "href": "https://www.house.mn.gov/NewLaws/story/2023/5544",
+      "note": "Summary of fee/tax changes in law"
+    },
+    {
+      "label": "KSTP (Nov 6, 2025): Why some tab fees aren’t going down as expected",
+      "href": "https://kstp.com/kstp-news/top-news/wonder-why-your-license-tab-fees-arent-going-down-heres-why/",
+      "note": "Explainer-style reporting"
+    }
+  ],
+  "inflation": [
+    {
+      "label": "BLS CPI (Minneapolis–St. Paul): Consumer Price Index news release page",
+      "href": "https://www.bls.gov/regions/midwest/news-release/consumerpriceindex_minneapolis.htm",
+      "note": "Official regional CPI-U updates"
+    }
+  ]
+}
