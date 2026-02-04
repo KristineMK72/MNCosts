@@ -1,0 +1,39 @@
+{
+  "events": [
+    {
+      "label": "FBI search warrants: Feeding Our Future sites",
+      "x": 2022.05,
+      "source": "https://www.ag.state.mn.us/Office/Communications/2022/09/26_FeedingOurFuture.asp"
+    },
+    {
+      "label": "DOJ charges 47 defendants ($250M FOF)",
+      "x": 2022.72,
+      "source": "https://www.justice.gov/archives/opa/pr/us-attorney-announces-federal-charges-against-47-defendants-250-million-feeding-our-future"
+    },
+    {
+      "label": "First FOF trial begins",
+      "x": 2024.31,
+      "source": "https://sahanjournal.com/feeding-our-future-trial/"
+    },
+    {
+      "label": "HHS OIG audit on MN childcare attendance/payments",
+      "x": 2025.42,
+      "source": "https://oig.hhs.gov/reports/all/2025/minnesota-could-better-ensure-that-childcare-assistance-providers-comply-with-attendance-requirements/"
+    },
+    {
+      "label": "Federal charges tied to DHS programs (Medicaid/HSS/EIDBI)",
+      "x": 2025.96,
+      "source": "https://www.justice.gov/usao-mn/pr/six-additional-defendants-charged-one-defendant-pleads-guilty-ongoing-fraud-schemes"
+    },
+    {
+      "label": "HHS freezes federal child care payments to MN (reported)",
+      "x": 2025.99,
+      "source": "https://www.cbsnews.com/news/hhs-freezes-child-care-payments-minnesota/"
+    },
+    {
+      "label": "HHS announces rule changes citing MN daycare fraud allegations",
+      "x": 2026.01,
+      "source": "https://www.hhs.gov/press-room/hhs-close-biden-era-loophole-states-pay-child-care-providers-without-counting-attendance.html"
+    }
+  ]
+}
